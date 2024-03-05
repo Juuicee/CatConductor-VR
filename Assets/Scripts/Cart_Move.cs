@@ -5,7 +5,7 @@ using UnityEngine;
 public class Cart_Move : MonoBehaviour
 {
     public Camera playerCamera;
-    public float moveSpeed = 3f;
+    public float moveSpeed = 5f;
     // Start is called before the first frame update
     void Start()
     {
