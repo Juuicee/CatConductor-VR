@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CollideTest : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "HitBox" )
         {
-            print("DEATH");
+            print("-1 HP");
         }
     }
 }
