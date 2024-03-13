@@ -35,7 +35,7 @@ public class Cart_Move : MonoBehaviour
         {
             StartCoroutine(CartSwitchRight());
         }
-        //Look into Coroutine for switching
+        //Look into making the positions into an array and switch positions
 
     }
 
