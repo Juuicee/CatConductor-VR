@@ -6,32 +6,66 @@ public class Cart_Move : MonoBehaviour
 {
     public Camera playerCamera;
     public float moveSpeed = 5f;
+    public int maxLeftPositions = -1; // Set the maximum left positions
+    public int maxRightPositions = 1; // Set the maximum right positions
+    private int currentXPosition = 0; // Tracks the current position
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Moves Forward and back along z axis                           //Up/Down
-        //transform.Translate(Vector3.forward * Time.deltaTime * Input.GetAxis("Vertical")* moveSpeed);
-        //Moves Left and right along x Axis                               //Left/Right
+
+        // Moves the player forward continously
         transform.Translate(Vector3.forward * Time.deltaTime *  moveSpeed);
 
         // Move Left
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * Time.deltaTime * moveSpeed);
+            StartCoroutine(CartSwitchLeft());
 
         }
 
         // Move Right
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
+            StartCoroutine(CartSwitchRight());
         }
         //Look into Coroutine for switching
+
     }
+
+    IEnumerator CartSwitchLeft() 
+    {
+        if (currentXPosition > maxLeftPositions)
+        {
+                currentXPosition--;
+                transform.Translate(Vector3.left * 4f); // Move left by 4 units
+                Debug.Log("left");
+                yield return new WaitForSeconds(.1f);
+                //yield return null;
+        }
+
+
+    }
+
+    IEnumerator CartSwitchRight()
+    {
+
+        if (currentXPosition < maxRightPositions)
+        {
+                currentXPosition++;
+                transform.Translate(Vector3.right * 4f); // Move right by 4 units
+                Debug.Log("right");
+                yield return new WaitForSeconds(.1f);
+                //yield return null;
+        }
+        
+    }
+
+
 }
