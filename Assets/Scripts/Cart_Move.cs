@@ -16,7 +16,7 @@ public class Cart_Move : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    // Update is called once per frames
     void Update()
     {
 
@@ -45,8 +45,7 @@ public class Cart_Move : MonoBehaviour
         {
                 currentXPosition--;
                 transform.Translate(Vector3.left * 4f); // Move left by 4 units
-                Debug.Log("left");
-                yield return new WaitForSeconds(.1f);
+                yield return null;
                 //yield return null;
         }
 
@@ -60,8 +59,7 @@ public class Cart_Move : MonoBehaviour
         {
                 currentXPosition++;
                 transform.Translate(Vector3.right * 4f); // Move right by 4 units
-                Debug.Log("right");
-                yield return new WaitForSeconds(.1f);
+                yield return null;
                 //yield return null;
         }
         
