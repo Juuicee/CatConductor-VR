@@ -10,28 +10,29 @@ public class Cart_Move : MonoBehaviour
     public int maxRightPositions = 1; // Set the maximum right positions
     private int currentXPosition = 0; // Tracks the current position
 
+    bool canInput = true;
+
     // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    // Update is called once per frames
+    // Update is called once per frame
     void Update()
     {
 
-        // Moves the player forward continously
-        transform.Translate(Vector3.forward * Time.deltaTime *  moveSpeed);
+
 
         // Move Left
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && canInput)
         {
             StartCoroutine(CartSwitchLeft());
 
         }
 
         // Move Right
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && canInput)
         {
             StartCoroutine(CartSwitchRight());
         }
@@ -43,9 +44,12 @@ public class Cart_Move : MonoBehaviour
     {
         if (currentXPosition > maxLeftPositions)
         {
-                currentXPosition--;
-                transform.Translate(Vector3.left * 4f); // Move left by 4 units
-                yield return null;
+            canInput = false;
+            currentXPosition--;
+            transform.Translate(Vector3.left * 4f); // Move left by 4 units
+            
+            yield return new WaitForSeconds(.2f);
+            canInput = true;
                 //yield return null;
         }
 
@@ -57,10 +61,14 @@ public class Cart_Move : MonoBehaviour
 
         if (currentXPosition < maxRightPositions)
         {
-                currentXPosition++;
-                transform.Translate(Vector3.right * 4f); // Move right by 4 units
-                yield return null;
-                //yield return null;
+            canInput = false;
+            currentXPosition++;
+            transform.Translate(Vector3.right * 4f); // Move right by 4 units
+            
+            yield return new WaitForSeconds(.2f);
+            canInput = true;
+
+                
         }
         
     }
