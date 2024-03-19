@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rotation : MonoBehaviour
+public class DeleteObstacles : MonoBehaviour
 {
-
     // Start is called before the first frame update
     void Start()
     {
@@ -14,17 +13,11 @@ public class rotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0f, .1f, 0f, Space.Self); 
         
     }
 
-    public void SpeedUpRotation()
+    private void OnTriggerEnter(Collider other)
     {
-
-    }
-
-    public void SlowDownRotation()
-    {
-
+        Destroy(other.gameObject);
     }
 }
