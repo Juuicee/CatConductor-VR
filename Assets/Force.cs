@@ -8,7 +8,10 @@ public class Force : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            GetComponent<Rigidbody>().AddForce(transform.forward * 800);
+            GetComponent<Rigidbody>().AddForce(transform.right * 800);
             GetComponent<Rigidbody>().AddForce(transform.up * 500);
+            GetComponent<Rigidbody>().AddForce(transform.forward * -300);
             GetComponent<Rigidbody>().useGravity = true;
         }
     }
