@@ -8,18 +8,22 @@ public class rotation : MonoBehaviour
     private float rotationSpeed = 0.1f;
 
     // speed increase rate per second
-    private float speedIncreaseRate = 0.0001f;
+    private float speedIncreaseRate = 0.1f;
 
     //rate of slowing down
-    private float slowDownRate = 0.05f;
+    private float slowDownRate = 0.5f;
 
     // Minimum and maximum rotation speed
-    private float minRotationSpeed = 0.1f;
+    private float minRotationSpeed = 0.01f;
     private float maxRotationSpeed = 5f;
 
     private bool isSlowingDown = false; //flag to check if isSlowingDown function is active
     private float slowDownTimer = 0f; //timer to track slow down duration
     private float maxSlowDownTime = 3f; //Maximum duration for slow down
+
+    //Capture Speed Variable before activating SlowDownRotation method
+    private float originalSpeed = 0.1f;
+    private float rapidSpeedUpRate = 0.5f;
 
     float i = 0;
     // Start is called before the first frame update
@@ -31,9 +35,15 @@ public class rotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isSlowingDown)
+        {
+            SpeedUpRotation();
+        }
+
         // Check for the Z key being pressed and not already slowing down
         if (Input.GetKeyDown(KeyCode.Z) && !isSlowingDown)
         {
+            originalSpeed = rotationSpeed;
             isSlowingDown = true;
             slowDownTimer = 0f; // Reset the slow down timer
         }
@@ -47,16 +57,20 @@ public class rotation : MonoBehaviour
             if (slowDownTimer >= maxSlowDownTime || Input.GetKeyUp(KeyCode.Z))
             {
                 isSlowingDown = false; // Deactivate slow down
+                StartCoroutine(RapidSpeedUp());
             }
         }
-        else
-        {
-            SpeedUpRotation();
-        }
-
 
         transform.Rotate(0f, rotationSpeed, 0f, Space.Self);
-        
+    }
+
+    IEnumerator RapidSpeedUp()
+    {
+        while (rotationSpeed < originalSpeed)
+        {
+            rotationSpeed += rapidSpeedUpRate * Time.deltaTime;
+            yield return null;
+        }
     }
 
     // Slowly increase in speed at a slow rate over time in int
@@ -76,4 +90,7 @@ public class rotation : MonoBehaviour
         rotationSpeed -= slowDownRate * Time.deltaTime;
         rotationSpeed = Mathf.Max(rotationSpeed, minRotationSpeed);
     }
+
+
+    //capture the speed, then slow it down, then after slow down timer has elapsed, rapidly build up back to original speed
 }
