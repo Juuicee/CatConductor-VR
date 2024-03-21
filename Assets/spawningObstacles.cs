@@ -54,6 +54,7 @@ public class spawningObstacles : MonoBehaviour
 
         float spawnTimer = 0;
         int nextAction = Random.Range(0, totalChance);
+        Debug.Log(nextAction);
 
         if(nextAction < eventsToSpawn[0]){
 
