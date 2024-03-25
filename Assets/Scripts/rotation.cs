@@ -34,10 +34,10 @@ public class rotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isSlowingDown)
+        /*if (!isSlowingDown)
         {
             SpeedUpRotation();
-        }
+        }*/
 
         // Check for the Z key being pressed and not already slowing down
         if (Input.GetKeyDown(KeyCode.Z) && !isSlowingDown)

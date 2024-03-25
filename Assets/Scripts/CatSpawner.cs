@@ -25,7 +25,7 @@ public class CatSpawner : MonoBehaviour
 
         //This calculates the distance of the cat to the seat, is then stored into the distance variable
         float distance = Vector3.Distance(Cat.transform.position, transform.position);
-        Debug.Log("Distance to seat: " + distance);
+
 
         //if the distance is greater than the threshold, we spawn a new cat using the SpawnNewCat() method
         if (distance > spawnThresholdDistance && !isSpawning)
@@ -42,7 +42,6 @@ public class CatSpawner : MonoBehaviour
         yield return new WaitForSeconds(2f); //Wait for 2 seconds before spawning the cat
 
         //Create new cat
-        Debug.Log("Spawning cat at original position: " + originalCatPosition);
         GameObject newCat = Instantiate(Cat, originalCatPosition, Quaternion.identity);
 
         //Update the Cat reference
