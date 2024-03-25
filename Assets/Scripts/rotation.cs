@@ -5,7 +5,7 @@ using UnityEngine;
 public class rotation : MonoBehaviour
 {
     // Initial rotation speed
-    private float rotationSpeed = 0.1f;
+    private float rotationSpeed = .5f;
 
     // speed increase rate per second
     private float speedIncreaseRate = 0.1f;
@@ -22,8 +22,10 @@ public class rotation : MonoBehaviour
     private float maxSlowDownTime = 3f; //Maximum duration for slow down
 
     //Capture Speed Variable before activating SlowDownRotation method
-    private float originalSpeed = 0.1f;
+    private float originalSpeed = 0f;
     private float rapidSpeedUpRate = 0.5f;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -32,12 +34,13 @@ public class rotation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    private void FixedUpdate() {
+        
         /*if (!isSlowingDown)
         {
             SpeedUpRotation();
         }*/
+
 
         // Check for the Z key being pressed and not already slowing down
         if (Input.GetKeyDown(KeyCode.Z) && !isSlowingDown)
@@ -89,6 +92,7 @@ public class rotation : MonoBehaviour
         rotationSpeed -= slowDownRate * Time.deltaTime;
         rotationSpeed = Mathf.Max(rotationSpeed, minRotationSpeed);
     }
+
 
 
     //capture the speed, then slow it down, then after slow down timer has elapsed, rapidly build up back to original speed
