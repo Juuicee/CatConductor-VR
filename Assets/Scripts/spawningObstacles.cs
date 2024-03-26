@@ -19,6 +19,7 @@ public class spawningObstacles : MonoBehaviour
     public List<int> eventsToSpawn = new List<int>();
     private int totalChance = 0;
     
+    
 
     void Start()
     {
@@ -39,12 +40,16 @@ public class spawningObstacles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /*if(statsScript.paused){
+            Time.timeScale = 0;
+        }*/
     }
 
     IEnumerator Spawner(float spawnTimer){
 
         yield return new WaitForSeconds(spawnTimer);
+
+        //if paused wait until unpaused
         SpawnEnemy();
         
 

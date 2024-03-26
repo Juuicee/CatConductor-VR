@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3816002658708834768}
   - component: {fileID: 9187739539196117081}
   - component: {fileID: 4549060635410455414}
+  - component: {fileID: -5841946903638096107}
   m_Layer: 6
   m_Name: Rocks_Mossy_4
   m_TagString: Untagged
@@ -134,3 +135,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0658808, y: 2.0816169, z: 1.8709335}
   m_Center: {x: 0.12650442, y: -0.11390376, z: -0.07534504}
+--- !u!114 &-5841946903638096107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5810698795101446849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3027b69af1c6cd64f969115db99582d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

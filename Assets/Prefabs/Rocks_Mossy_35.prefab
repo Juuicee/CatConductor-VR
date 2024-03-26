@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3688676341557550406}
   - component: {fileID: 8466070053472134431}
   - component: {fileID: 8160045812459219938}
+  - component: {fileID: 7917622479594340374}
   m_Layer: 6
   m_Name: Rocks_Mossy_35
   m_TagString: HitBox
@@ -134,3 +135,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7917622479594340374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3607115701355128687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3027b69af1c6cd64f969115db99582d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
