@@ -46,7 +46,7 @@ public class Cart_Move : MonoBehaviour
         {
             canInput = false;
             currentXPosition--;
-            transform.Translate(Vector3.left * 4f); // Move left by 4 units
+            transform.Translate(Vector3.left * 8f); // Move left by 4 units
             
             yield return new WaitForSeconds(.2f);
             canInput = true;
@@ -63,7 +63,7 @@ public class Cart_Move : MonoBehaviour
         {
             canInput = false;
             currentXPosition++;
-            transform.Translate(Vector3.right * 4f); // Move right by 4 units
+            transform.Translate(Vector3.right * 8f); // Move right by 4 units
             
             yield return new WaitForSeconds(.2f);
             canInput = true;

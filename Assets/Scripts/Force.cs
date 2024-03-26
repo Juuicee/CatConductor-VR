@@ -6,6 +6,8 @@ public class Force : MonoBehaviour
 {
     Vector3 ImpulseVector = new Vector3(0.0f, 5000.0f, 10000.0f);
     Vector3 spinVector = new Vector3(50000.0f, 50000.0f, 50000.0f);
+  
+    
 
     void OnCollisionEnter(Collision other)
     {
@@ -32,7 +34,8 @@ public class Force : MonoBehaviour
         transform.parent = null;
         GetComponent<Rigidbody>().AddForce(ImpulseVector, ForceMode.Force);
         GetComponent<Rigidbody>().AddTorque(spinVector, ForceMode.Force);
-        GetComponent<Rigidbody>().useGravity = true; 
+        GetComponent<Rigidbody>().useGravity = true;
+        GetComponent<Collider>().enabled = false; 
 
         yield return new WaitForSecondsRealtime(3f);
         Destroy(gameObject);
