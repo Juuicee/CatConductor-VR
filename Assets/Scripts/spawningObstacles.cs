@@ -11,6 +11,7 @@ public class spawningObstacles : MonoBehaviour
     public List<GameObject> smallObstacle = new List<GameObject>();
     public List<GameObject> mediumObstacle = new List<GameObject>();
     public List<GameObject> bigObstacle = new List<GameObject>();
+    public List<GameObject> coal = new List<GameObject>();
 
     //Chance for each event to happen out of 100
     // 1 = chance for a single track obstacle to spawn
@@ -81,6 +82,13 @@ public class spawningObstacles : MonoBehaviour
 
         else if(nextAction < eventsToSpawn[2]){
             Instantiate(bigObstacle[0], spawnLocations[5].position, Quaternion.identity, island);
+            spawnTimer = Random.Range(2f, 4f);
+        }
+
+        else if(nextAction < eventsToSpawn[3]){
+            int trackSpawn = Random.Range(0, 3);
+            Vector3 pos = new Vector3(spawnLocations[trackSpawn].position.x, spawnLocations[trackSpawn].position.y + .7f, spawnLocations[trackSpawn].position.z);
+            Instantiate(coal[0], pos, Quaternion.identity, island);
             spawnTimer = Random.Range(2f, 4f);
         }
 
