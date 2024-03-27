@@ -2490,10 +2490,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 74528664461659119, guid: 11ed974008cc9c749abb5dacedf7ccbd,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 484674486447004116, guid: 11ed974008cc9c749abb5dacedf7ccbd,
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2135292902689313255, guid: 11ed974008cc9c749abb5dacedf7ccbd,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484860825803663736, guid: 11ed974008cc9c749abb5dacedf7ccbd,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2976474117221731351, guid: 11ed974008cc9c749abb5dacedf7ccbd,
         type: 3}
@@ -2545,10 +2560,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5601822040730552213, guid: 11ed974008cc9c749abb5dacedf7ccbd,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6462856555906325520, guid: 11ed974008cc9c749abb5dacedf7ccbd,
         type: 3}
       propertyPath: m_Name
       value: Cart (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138698806968501203, guid: 11ed974008cc9c749abb5dacedf7ccbd,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2558,6 +2583,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1491585103}
+    - targetCorrespondingSourceObject: {fileID: 6462856555906325520, guid: 11ed974008cc9c749abb5dacedf7ccbd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1491585106}
   m_SourcePrefab: {fileID: 100100000, guid: 11ed974008cc9c749abb5dacedf7ccbd, type: 3}
 --- !u!4 &1074694722 stripped
 Transform:
@@ -3167,8 +3196,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paused: 0
-  hp: 0
+  hp: 5
   time: 0
+--- !u!65 &1491585106
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491585100}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.71, z: 1.13}
+  m_Center: {x: 5.19, y: 2.24, z: 9.94}
 --- !u!1001 &1540245436
 PrefabInstance:
   m_ObjectHideFlags: 0
