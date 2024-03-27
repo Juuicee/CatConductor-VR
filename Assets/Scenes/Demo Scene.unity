@@ -3215,6 +3215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abfe733b0b4824242b7df46ac593c28b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotScript: {fileID: 2059271140}
+  stats: {fileID: 1491585103}
 --- !u!1001 &1540245436
 PrefabInstance:
   m_ObjectHideFlags: 0
