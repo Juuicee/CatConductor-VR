@@ -48,9 +48,9 @@ public class Cart_Move : MonoBehaviour
             currentXPosition--;
             transform.Translate(Vector3.left * 8f); // Move left by 4 units
             
-            yield return new WaitForSeconds(.2f);
+            yield return new WaitForSeconds(.1f);
             canInput = true;
-                //yield return null;
+                
         }
 
 
@@ -65,7 +65,7 @@ public class Cart_Move : MonoBehaviour
             currentXPosition++;
             transform.Translate(Vector3.right * 8f); // Move right by 4 units
             
-            yield return new WaitForSeconds(.2f);
+            yield return new WaitForSeconds(.1f);
             canInput = true;
 
                 
