@@ -31,4 +31,14 @@ public class CartStats : MonoBehaviour
         
     }
 
+    //GameOver scene
+        //undo kinetics feature
+            //make it go flying
+        //use different script
+        //use pause feature
+            //use time.timescale = 1 regular speed, 0 is stop
+
+    //Retry button
+        //reset game
+
 }
